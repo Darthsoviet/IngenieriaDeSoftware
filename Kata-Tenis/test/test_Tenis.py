@@ -180,8 +180,52 @@ class test_Tenis(unittest.TestCase):
         self.assertEquals(3,jugador1.getPuntaje())
         self.assertEquals(5,jugador2.getPuntaje())
             
-        self.assertEqual(jugador1,tenis.getGanador())
+        self.assertEqual(jugador2,tenis.getGanador())
         
+    def test_jugador1_ventaja(self):
+        jugador1=Jugador()
+        jugador2=Jugador()
+    
+        tenis=Tenis(jugador1,jugador2)
+
+        tenis.p1ganaPunto()
+        tenis.p1ganaPunto()
+        tenis.p1ganaPunto()
+        
+            
+        tenis.p2ganaPunto()
+        tenis.p2ganaPunto()
+        tenis.p2ganaPunto()
+        tenis.p1ganaPunto()
+
+        self.assertEquals(4,jugador1.getPuntaje())
+        self.assertEquals(3,jugador2.getPuntaje())
+
+        self.assertEqual(jugador1,tenis.getVentaja())
+
+    def test_jugador2_ventaja(self):
+        jugador1=Jugador()
+        jugador2=Jugador()
+    
+        tenis=Tenis(jugador1,jugador2)
+
+        tenis.p1ganaPunto()
+        tenis.p1ganaPunto()
+        tenis.p1ganaPunto()
+        
+
+        
+        
+            
+        tenis.p2ganaPunto()
+        tenis.p2ganaPunto()
+        tenis.p2ganaPunto()
+        tenis.p2ganaPunto()
+        self.assertEquals(4,jugador2.getPuntaje())
+        self.assertEquals(3,jugador1.getPuntaje())
+
+        self.assertEqual(jugador2,tenis.getVentaja())
+
 
 
 

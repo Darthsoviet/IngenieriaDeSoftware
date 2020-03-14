@@ -39,35 +39,37 @@ class Tenis:
 
     def p1ganaPunto(self):
 
-        if not self.isDeuce() :
+        if self.__jugador1.getPuntaje()<3:
             self.__jugador1.addPuntaje()
 
-        elif self.isDeuce():
+        elif self.__jugador1.getPuntaje()==3:
             self.__jugador1.addPuntaje()
+            if self.getVentaja()==self.__jugador2:
+                self.__jugador2.delPuntaje()
+                
+            self.setVentaja(self.__jugador1)
         
-        elif self.isVentaja() and self.getVentaja() != self.__jugador1:
-            self.__jugador1.addPuntaje()
-            self.__jugador2.delPuntaje()
-
         elif self.getVentaja() == self.__jugador1:
             self.__jugador1.addPuntaje()
             self.setGanador(self.__jugador1)
+
+       
         
             
 
     
     def p2ganaPunto(self):
-        if not self.isDeuce():
+        if self.__jugador2.getPuntaje()<3:
             self.__jugador2.addPuntaje()
 
-        elif self.isDeuce():
+        elif self.__jugador2.getPuntaje()==3:
             self.__jugador2.addPuntaje()
 
+            if self.getVentaja()==self.__jugador1:
+                self.__jugador1.delPuntaje()
+
+            self.setVentaja(self.__jugador2)
         
-        elif self.isVentaja() and self.getVentaja() != self.__jugador2:
-            self.__jugador2.addPuntaje()
-            self.__jugador1.delPuntaje()
-
         elif self.getVentaja() == self.__jugador2:
             self.__jugador2.addPuntaje()
             self.setGanador(self.__jugador2)
