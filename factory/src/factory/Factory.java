@@ -5,6 +5,8 @@
  */
 package factory;
 
+import ico.fes.is.celulares.Celular;
+import ico.fes.is.factory.CelFactoryi;
 import ico.fes.is.factory.Snack;
 
 /**
@@ -21,6 +23,9 @@ public class Factory {
         Snack snack = SnackFactory.createSnack(Snack.PIZZA_HAW);
         snack = SnackFactory.createSnack(Snack.TORTA_MILANESA);
         
+        
+        Celular iphone = CelularFactory.createCelular(CelFactoryi.IPHONE_X_PRO_MAX);
+        Celular samsung = CelularFactory.createCelular(CelFactoryi.SAMGUNG_GALAXY_A50);
     }
     
 }

@@ -37,7 +37,7 @@ public class SnackFactory implements Snack{
                 return new Hamburguesa("res", false, true, false, false, true);
 
             case Snack.HAMBURGUESA_DE_POLLO:
-                return new Hamburguesa("pollo",false,false,true); 
+                return new Hamburguesa("pollo", false, false, false, false, false); 
 
             case Snack.HAMBURGUESA_DOBLE_CON_QUESO:
                 return new Hamburguesa("res", true, false, false, false, false);
